@@ -1,27 +1,120 @@
-#container {
-  text-align: center;
+// Contenedor principal con fondo oscuro profundo y orbes animados de fondo
+ion-content {
+  --background: radial-gradient(circle at 50% 50%, #0d0e15 0%, #050508 100%);
+  position: relative;
+  overflow: hidden;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  // Orbe brillante flotante superior izquierdo
+  &::before {
+    content: '';
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.25) 0%, transparent 70%);
+    top: -80px;
+    left: -80px;
+    border-radius: 50%;
+    animation: floatingPurple 14s infinite ease-in-out alternate;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  // Orbe brillante flotante inferior derecho
+  &::after {
+    content: '';
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.18) 0%, transparent 70%);
+    bottom: -60px;
+    right: -60px;
+    border-radius: 50%;
+    animation: floatingCyan 10s infinite ease-in-out alternate-reverse;
+    pointer-events: none;
+    z-index: 0;
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+// Tarjeta de Cristal Reflectivo (Glassmorphism) para el contenido
+.glass-card {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 28px;
+  margin: 20px 16px;
+  box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.5);
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+// Items de Ionic adaptados al estilo oscuro transparente
+ion-item {
+  --background: rgba(255, 255, 255, 0.02);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --color: #ffffff;
+  --border-radius: 14px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 
-  color: #8c8c8c;
+  ion-label {
+    font-weight: 500;
+    color: #cbd5e1;
+  }
 
-  margin: 0;
+  ion-select {
+    --placeholder-color: #94a3b8;
+    font-weight: 600;
+    color: #38bdf8;
+  }
 }
 
-#container a {
-  text-decoration: none;
+// Botones estilizados con sombras sutiles y transiciones de pulsación
+ion-button {
+  --border-radius: 14px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  height: 48px;
+  transition: transform 0.2s ease;
+
+  &::part(native) {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+// Animación de los fondos orbe
+@keyframes floatingPurple {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(50px, 40px) scale(1.2); }
+}
+
+@keyframes floatingCyan {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-40px, -30px) scale(1.15); }
 }

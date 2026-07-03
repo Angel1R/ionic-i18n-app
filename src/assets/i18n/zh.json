@@ -1,0 +1,9 @@
+{
+  "TITLE": "多语言应用",
+  "DESCRIPTION": "Ionic 和 Angular 国际化示例",
+  "BUTTON_SAVE": "保存",
+  "BUTTON_DELETE": "删除",
+  "BUTTON_CANCEL": "取消",
+  "LANGUAGE": "语言",
+  "SUCCESS_SAVE": "数据保存成功！"
+}

@@ -1,0 +1,8 @@
+{
+  "TITLE": "Aplicación Multilenguaje",
+  "DESCRIPTION": "Ejemplo de internacionalización con Ionic y Angular",
+  "BUTTON_SAVE": "Guardar",
+  "BUTTON_DELETE": "Eliminar",
+  "BUTTON_CANCEL": "Cancelar",
+  "LANGUAGE": "Idioma"
+}

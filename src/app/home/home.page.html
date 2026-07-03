@@ -1,20 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      {{ 'TITLE' | translate }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  
+  <div class="glass-card">
+    <p>{{ 'DESCRIPTION' | translate }}</p>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-item>
+      <ion-label>{{ 'LANGUAGE' | translate }}</ion-label>
+      <ion-select [value]="translate.currentLang()" (ionChange)="cambiarIdioma($event)">
+        @for (lang of idiomas; track lang.code) {
+          <ion-select-option [value]="lang.code">
+            {{ lang.nombre }}
+          </ion-select-option>
+        }
+      </ion-select>
+    </ion-item>
+
+    <div class="ion-margin-top">
+      @if (translate.currentLang()) {
+        <ion-button expand="block" color="primary">{{ 'BUTTON_SAVE' | translate }}</ion-button>
+        <ion-button expand="block" color="danger">{{ 'BUTTON_DELETE' | translate }}</ion-button>
+        <ion-button expand="block" color="light">{{ 'BUTTON_CANCEL' | translate }}</ion-button>
+      }
+    </div>
   </div>
+  
+
 </ion-content>

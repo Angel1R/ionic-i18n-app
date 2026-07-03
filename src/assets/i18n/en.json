@@ -1,0 +1,8 @@
+{
+  "TITLE": "Multilanguage Application",
+  "DESCRIPTION": "Internationalization example using Ionic and Angular",
+  "BUTTON_SAVE": "Save",
+  "BUTTON_DELETE": "Delete",
+  "BUTTON_CANCEL": "Cancel",
+  "LANGUAGE": "Language"
+}

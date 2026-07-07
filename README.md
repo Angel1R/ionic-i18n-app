@@ -27,7 +27,7 @@ Antes de levantar el proyecto, asegúrate de tener instalado lo siguiente en tu 
 
 ---
 
-## 💻 Instrucciones para Levantar el Proyecto
+## Instrucciones para Levantar el Proyecto
 
 Sigue estos pasos en tu terminal para ejecutar la aplicación localmente:
 
